@@ -43,7 +43,6 @@ class VersionedFilesController < ApplicationController
   # DELETE /versioned_files/1.json
   def destroy    
     @versioned_file.destroy
-
     head :no_content
   end
 

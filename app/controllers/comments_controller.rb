@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:show, :update, :destroy]
+  before_action :set_comment, only: [:update, :destroy]
 
   # GET /comments
   # GET /comments.json
@@ -12,7 +12,8 @@ class CommentsController < ApplicationController
   # GET /comments/1
   # GET /comments/1.json
   def show
-    render json: @comment
+    @comments =  Comment.where(file_version_id: params[:id]) 
+    render json: @comments
   end
 
   # POST /comments
@@ -43,7 +44,6 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.json
   def destroy
     @comment.destroy
-
     head :no_content
   end
 
@@ -54,6 +54,6 @@ class CommentsController < ApplicationController
     end
 
     def comment_params
-      params.require(:comment).permit(:description, :fileVersion_id)
+      params.require(:comment).permit(:description, :file_version_id)
     end
 end
