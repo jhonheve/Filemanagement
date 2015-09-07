@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  path: MyString
+  versionedFile_id: 
+  isActive: false
+
+two:
+  path: MyString
+  versionedFile_id: 
+  isActive: false
