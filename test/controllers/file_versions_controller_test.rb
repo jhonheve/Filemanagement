@@ -13,7 +13,10 @@ class FileVersionsControllerTest < ActionController::TestCase
 
   test "should create file_version" do
     assert_difference('FileVersion.count') do
-      post :create, file_version: { isActive: @file_version.isActive, path: @file_version.path, versionedFile_id: @file_version.versionedFile_id }
+      path = Rails.root.join('public', "filemanagement")
+      filename = "test.jpg"
+      bin = File.open(path + filename, "rb")
+      post :create, versioned_file_id: @file_version.versioned_file_id, file:bin
     end
 
     assert_response 201
@@ -25,7 +28,7 @@ class FileVersionsControllerTest < ActionController::TestCase
   end
 
   test "should update file_version" do
-    put :update, id: @file_version, file_version: { isActive: @file_version.isActive, path: @file_version.path, versionedFile_id: @file_version.versionedFile_id }
+    put :update, id: @file_version, file_version: { isActive: @file_version.isActive, path: @file_version.path, versioned_file_id: @file_version.versioned_file_id }
     assert_response 204
   end
 

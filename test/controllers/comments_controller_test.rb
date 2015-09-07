@@ -13,7 +13,7 @@ class CommentsControllerTest < ActionController::TestCase
 
   test "should create comment" do
     assert_difference('Comment.count') do
-      post :create, comment: { description: @comment.description, fileVersion_id: @comment.fileVersion_id }
+      post :create, comment: { description: @comment.description, file_version_id: @comment.fileVersion_id }
     end
 
     assert_response 201
@@ -25,7 +25,8 @@ class CommentsControllerTest < ActionController::TestCase
   end
 
   test "should update comment" do
-    put :update, id: @comment, comment: { description: @comment.description, fileVersion_id: @comment.fileVersion_id }    assert_response 204
+    put :update, id: @comment, comment: { description: @comment.description, file_version_id: @comment.file_version_id }    
+    assert_response 204
   end
 
   test "should destroy comment" do

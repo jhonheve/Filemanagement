@@ -2,10 +2,10 @@
 
 one:
   path: MyString
-  versionedFile_id: 
+  versioned_file_id: 
   isActive: false
 
 two:
   path: MyString
-  versionedFile_id: 
+  versioned_file_id: 
   isActive: false
